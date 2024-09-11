@@ -6,5 +6,9 @@
  */
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="MageWorx\OrderEditor\Api\StockManagerInterface" type="MageWorx\OrderEditorWithoutInventory\Model\Stock\NoCatalogInventoryManager"/>
+    <type name="MageWorx\OrderEditor\Model\Order\Item">
+        <arguments>
+            <argument name="stockManager" xsi:type="object">MageWorx\OrderEditorWithoutInventory\Model\Stock\NoCatalogInventoryManager</argument>
+        </arguments>
+    </type>
 </config>
